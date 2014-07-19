@@ -4,6 +4,7 @@ git pull
 echo "Press any key to continue."
 read randomshit
 echo "Preparing to push changes."
+git add -u
 git add *
 echo -e "Enter a commit message:"
 read commitmessage
