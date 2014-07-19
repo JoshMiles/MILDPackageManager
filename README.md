@@ -3,4 +3,8 @@ MILD Package Manager
 
 MILD Package Manager: A package manager for *nix systems
 
-Developed primarily in C.
+Current Utilities
+=================
+Download	-	A program that requires only the unique package
+			identifier and will communicate with the FileDB,
+			download the package and check the MD5 sum.
