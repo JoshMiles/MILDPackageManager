@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "downloader", "downloader\downloader.csproj", "{1D412E27-E263-4FE4-BA79-7F10DA03A4FB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileDB", "FileDB\FileDB.csproj", "{4E3A27B4-D9A1-4115-8E05-3B27CE9A390D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,6 +15,10 @@ Global
 		{1D412E27-E263-4FE4-BA79-7F10DA03A4FB}.Debug|x86.Build.0 = Debug|x86
 		{1D412E27-E263-4FE4-BA79-7F10DA03A4FB}.Release|x86.ActiveCfg = Release|x86
 		{1D412E27-E263-4FE4-BA79-7F10DA03A4FB}.Release|x86.Build.0 = Release|x86
+		{4E3A27B4-D9A1-4115-8E05-3B27CE9A390D}.Debug|x86.ActiveCfg = Debug|x86
+		{4E3A27B4-D9A1-4115-8E05-3B27CE9A390D}.Debug|x86.Build.0 = Debug|x86
+		{4E3A27B4-D9A1-4115-8E05-3B27CE9A390D}.Release|x86.ActiveCfg = Release|x86
+		{4E3A27B4-D9A1-4115-8E05-3B27CE9A390D}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = downloader\downloader.csproj
