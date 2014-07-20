@@ -42,13 +42,13 @@ return simply "null" followed by the error's details.
 = Retrieve a package's   = DPEN           = DPEN:[package name] = Package's  =
 = dependancies.          =                =                     = dependancies
 ==============================================================================
-= Search for a           = SRCH           = SRCH:[query]        = List of
-= package.               =                =                     = package
-                         =                =                     = names that
-                         =                =                     = are the same
-                         =                =                     = as or
-                         =                =                     = similar to
-                         =                =                     = the query
+= Search for a           = SRCH           = SRCH:[query]        = List of    =
+= package.               =                =                     = package    =
+=                        =                =                     = names that =
+=                        =                =                     = are the same
+=                        =                =                     = as or      =
+=                        =                =                     = similar to =
+=                        =                =                     = the query  =
 ==============================================================================
 
 In the case that you cannot send an alphabetical RC (Request Code), use
