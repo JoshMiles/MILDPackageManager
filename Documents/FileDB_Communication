@@ -40,7 +40,7 @@ return simply "null" followed by the error's details.
 = log of a package.      =                =                     = changelog  =
 ==============================================================================
 = Retrieve a package's   = DPEN           = DPEN:[package name] = Package's  =
-= dependancies.          =                =                     = dependancies
+= dependencies.          =                =                     = dependencies
 ==============================================================================
 = Search for a           = SRCH           = SRCH:[query]        = List of    =
 = package.               =                =                     = package    =
