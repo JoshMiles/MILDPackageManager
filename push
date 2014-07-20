@@ -9,13 +9,9 @@ echo "=========================================="
 echo "Pulling any changes from repo."
 git pull
 echo "=========================================="
-echo "Press any key to continue."
-read randomshit
-echo "=========================================="
 echo "Preparing to push changes."
 git add -u
 git add *
-echo "=========================================="
 echo -e "Enter a commit message:"
 read commitmessage
 echo "=========================================="
@@ -24,6 +20,10 @@ echo -e "Comitting  with the message:"
 echo $commitmessage
 echo "=========================================="
 echo "Pushing to origin master."
+echo "========================================="
+echo "You will need your Github credentials to"
+echo "continue."
+echo "========================================="
 git push origin master
 echo "=========================================="
 echo "Your changes have been pushed to the"
