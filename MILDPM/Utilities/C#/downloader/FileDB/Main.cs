@@ -43,10 +43,10 @@ namespace FileDB
                     StreamReader sr = new StreamReader(s);
                     StreamWriter sw = new StreamWriter(s);
                     sw.AutoFlush = true;
-					string uniquePackageIdentifier = sr.ReadLine ();
-					sw.WriteLine ("Recieved");
+					string requestCode = sr.ReadLine ();
+					sw.WriteLine ("Recieved Request Code: " + requestCode);
 					Console.WriteLine ("Client requested " + uniquePackageIdentifier);										
-                    //to be continued
+                    
 					soc.Close();
                     Console.WriteLine("Closed connection");
                 }
