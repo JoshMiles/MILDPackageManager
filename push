@@ -23,7 +23,7 @@ drawTitle
 echo "This script will automatically pull any"
 echo "changes from the repo before pushing your"
 echo "changes."
-echo "=========================================="
+echo "==========================================="
 waitSec
 clear
 drawTitle
@@ -43,19 +43,19 @@ git commit -m "$commitmessage"
 drawBar
 echo -e "Comitting  with the message:"
 echo $commitmessage
-echo "=========================================="
+echo "==========================================="
 waitSec
 clear
 drawTitle
 echo "Pushing to origin master."
-echo "========================================="
+echo "==========================================="
 echo "You will need your Github credentials to"
 echo "continue."
-echo "========================================="
+echo "==========================================="
 git push origin master
-echo "=========================================="
+echo "==========================================="
 echo "Your changes have been pushed to the"
 echo "origin master branch. Any errors should"
 echo "be shown above."
-echo "=========================================="
+echo "==========================================="
 
