@@ -1,14 +1,33 @@
 #!/bin/bash
+drawTitle()
+{
 echo "=========================================="
 echo "=== GIT PUSH AUTOMATED SCRIPT FOR MILD ==="
 echo "=========================================="
+}
+waitSec()
+{
+echo -ne "Waiting 3 seconds..."\\r
+sleep 1
+echo -ne "Waiting 2 seconds..."\\r
+sleep 1
+echo -ne "Waiting 1 second..."\\r
+sleep 1
+}
+clear
+drawTitle
 echo "This script will automatically pull any"
 echo "changes from the repo before pushing your"
 echo "changes."
 echo "=========================================="
+waitSec
+clear
+drawTitle
 echo "Pulling any changes from repo."
 git pull
-echo "=========================================="
+waitSec
+clear
+drawTitle
 echo "Preparing to push changes."
 git add -u
 git add *
