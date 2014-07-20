@@ -44,7 +44,27 @@ namespace FileDB
                     StreamWriter sw = new StreamWriter(s);
                     sw.AutoFlush = true;
 					string requestCode = sr.ReadLine ();
-					sw.WriteLine ("Recieved Request Code: " + requestCode);
+					switch(requestCode)
+					{
+					case "MDSM" || "0001" || "1": // Requesting Package MD5 sum
+						break;
+					case "PURL" || "0010" || "2": // Requesting Package download URL
+						break;
+					case "APKG" || "0011" || "3": // Requesting Package author
+						break;
+					case "AURL" || "0100" || "4": // Requesting Package author's website
+						break;
+					case "CLOG" || "0101" || "5": // Requesting Package changelog
+						break;
+					case "DPEN" || "0110" || "6": // Requesting Package dependencies
+						break;
+					case "SRCH" || "0111" || "7": // Perform a search for a package
+						break;
+					default:
+						// error
+						sw.WriteLine ("NULL");
+						break;
+					}
 					Console.WriteLine ("Client requested " + uniquePackageIdentifier);										
                     
 					soc.Close();

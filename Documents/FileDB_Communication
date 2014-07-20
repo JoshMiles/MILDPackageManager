@@ -20,7 +20,7 @@ then return the MD5 sum of the package.
 ALL REQUEST CODES MUST BE SENT CAPTILISED.
 
 If the FilesDB cannot process the Request Code you sent to it, it shall
-return simply "null" followed by the error's details.
+return simply "NULL" followed by the error's details.
                                                                    Useful
 === Request Description === Request Code === Request Structure === Response ==
 = Retreive the package's = MDSM           = MDSM:[package name] = MD5 sum    =
@@ -83,7 +83,7 @@ The error responses are shown here.
 There is one good response which is simply; "GD"
 
 === Error Code === Error Description =
-= null          = The RC sent is invalid 
+= NULL          = The RC sent is invalid 
 = 404		= The package couldn't be found. (Spoofing HTTP error code; 404).
 = DBOFF		= The database isn't online.
 = DBERROR	= There is a database error. This will be logged and the database server manager is therefore notified of the error and it shall be fixed quickly.
