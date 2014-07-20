@@ -137,3 +137,6 @@ namespace test
                   }
          }
  }
+
+
+Ideally, one would be using SSL to connect to the server. 
