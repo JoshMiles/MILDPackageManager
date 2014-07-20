@@ -1,0 +1,139 @@
+This is a document that details how to communicate with the FilesDB
+frontend server.
+
+The communications must be using the Transmission Control Protocl (TCP).
+
+To begin with; connect to the FilesDB under the domain specified in the
+readme file and using the port specified in said readme.
+
+Once you have established a TCP stream, you can begin to request data.
+Use the following table to request date from the server.
+
+The Request Structure (RS) shows simply in which order to send the request code
+and any following information.
+For example; MDSM:[package name]
+The exampled RS tells you to first send the letters "MDSM" to the FilesDB,
+await a response (see the responses section for response handeling) and
+then, if the response is good, send the name of the package. It shall
+then return the MD5 sum of the package.
+
+ALL REQUEST CODES MUST BE SENT CAPTILISED.
+
+If the FilesDB cannot process the Request Code you sent to it, it shall
+return simply "null" followed by the error's details.
+                                                                   Useful
+=== Request Description === Request Code === Request Structure === Response ==
+= Retreive the package's = MDSM           = MDSM:[package name] = MD5 sum    =
+= MD5 sum.               =                =                     =            =
+==============================================================================
+= Retrieve the download  = PURL           = PURL:[package name] = Download   =
+= URL of a package.      =                =                     = URL        =
+==============================================================================
+= Retrieve the package's = APKG           = APKG:[package name] = Package    =
+= author name.           =                =                     = Author     =
+==============================================================================
+= Retrieve the website   = AURL           = AURL:[package name] = Package's  =
+= of the author of the   =                =                     = author's   =
+= package.               =                =                     = website    =
+==============================================================================
+= Retrieve the change    = CLOG           = CLOG:[package name] = Package's  =
+= log of a package.      =                =                     = changelog  =
+==============================================================================
+= Retrieve a package's   = DPEN           = DPEN:[package name] = Package's  =
+= dependancies.          =                =                     = dependancies
+==============================================================================
+= Search for a           = SRCH           = SRCH:[query]        = List of
+= package.               =                =                     = package
+                         =                =                     = names that
+                         =                =                     = are the same
+                         =                =                     = as or
+                         =                =                     = similar to
+                         =                =                     = the query
+==============================================================================
+
+In the case that you cannot send an alphabetical RC (Request Code), use
+the following table to send it in either binary or hexidecimal.
+
+You can also use the binary/hexidecimal RCs to shortern your code and
+keep your application's file size down. It can be used to optimize
+your application.
+
+=== STANDARD === BINARY === HEXIDECIMAL ===
+= MDSM        =  0001    = 0x1            =
+===========================================
+= PURL        =  0010    = 0x2            =
+===========================================
+= APKG        =  0011    = 0x3            =
+===========================================
+= AURL        =  0100    = 0x4            =
+===========================================
+= CLOG        =  0101    = 0x5            =
+===========================================
+= DPEN        =  0110    = 0x6            =
+===========================================
+= SRCH        =  0111    = 0x7            =
+===========================================
+
+=== Response Handeling ===
+
+The responses from the FilesDB come in two forms; error or useful.
+Useful responses are returned as described in the RC table above.
+The error responses are shown here.
+
+There is one good response which is simply; "GD"
+
+=== Error Code === Error Description =
+= null          = The RC sent is invalid 
+= 404		= The package couldn't be found. (Spoofing HTTP error code; 404).
+= DBOFF		= The database isn't online.
+= DBERROR	= There is a database error. This will be logged and the database server manager is therefore notified of the error and it shall be fixed quickly.
+= DBFAIL        = Failed to connect to the database.
+=======================================
+[MORE ERROR CODES WILL BE ADDED WHEN NEEDED]
+
+=== Example ===
+
+The following example is in C#.
+
+using System;
+using System.Net.Sockets;
+using Sysem.Net;
+
+namespace test
+ {
+        class MainClass
+         {
+                public static void Main(string[] args)
+                 {
+                        string packageName = "TestPackage"; //See below for info on TestPackage.
+                        TcpClient tcp = new TcpClient("127.0.0.1", 8000); //The IP and Port should be set to the IP and Port provided in the ReadMe file.
+                        Stream z = tcp.GetStream() // Gets the TCP stream.
+                        StreamReader zr = new StreamReader(z); //Creates a new stream reader.
+                        StreamWriter xw = new StreamWriter(x); //Creates a new stream writer.
+                        zw.AutoFlush = true; // vital.
+                        // We are going to request a package's download url.
+                        zw.WriteLine("PURL"); //The RC
+                        string response = zr.ReadLine();
+                        if(response == "GD")
+                         {
+                               //The response from the server is good.
+                               zw.WriteLine(packageName); //Send the package name.
+                               string downloadUrl = zr.ReadLine(); //Get response
+                               switch (downloadUrl) //Check for errors
+                                {
+                                        case "404":
+                                             Console.WriteLine("Package not found!");
+                                             break;
+                                        default: // If it defaults; then there are no errors.
+                                             Console.WriteLine("Download URL: " + downloadUrl); // Prints the download URL
+                                             break;
+                                 }
+                         } else {
+                               Console.WriteLine("Error:" + response); //Prints error for debug.
+                         }
+                         zw.Close();
+                         zr.Close();
+                         tcp.Close(); //Close connection                        
+                  }
+         }
+ }
