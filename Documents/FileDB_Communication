@@ -140,3 +140,6 @@ namespace test
 
 
 Ideally, one would be using SSL to connect to the server. 
+
+There will also be a HTTPS method introduced which one can connect to
+access the same information using URL parameters.
