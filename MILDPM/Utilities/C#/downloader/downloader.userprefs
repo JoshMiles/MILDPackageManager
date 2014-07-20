@@ -1,9 +1,23 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="downloader/Main.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FileDB/Main.cs">
     <Files>
-      <File FileName="downloader/Main.cs" Line="13" Column="5" />
+      <File FileName="downloader/Main.cs" Line="15" Column="17" />
+      <File FileName="FileDB/Main.cs" Line="46" Column="32" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="downloader" expanded="True" />
+          <Node name="FileDB" expanded="True">
+            <Node name="Main.cs" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

@@ -1,0 +1,53 @@
+#!/bin/bash
+drawBar()
+{
+echo "======================================"
+}
+drawTitle()
+{
+drawBar
+echo "=== AUTOMATED BUILDER FOR MILD PM  ==="
+drawBar
+}
+waitSec()
+{
+echo -ne "Waiting 3 seconds..."\\r
+sleep 1
+echo -ne "Waiting 2 seconds..."\\r
+sleep 1
+echo -ne "Waiting 1 second..."\\r
+sleep 1
+}
+clear
+drawTitle
+echo "This utility will build all MONO projects."
+drawBar
+waitSec
+clear
+drawTitle
+echo "Checking dependencies..."
+drawBar
+check1=$(mono)1
+if [ "$check1" = "bash: mono: command not found." ]; then
+	echo "Mono is not installed. Please install mono."
+	drawBar
+	waitSec
+	exit 0
+else
+	echo "Found mono!"
+fi
+drawBar
+waitSec
+clear
+drawTitle
+while read line
+do
+	echo -e "Compling $line\n..."
+	drawBar
+	mdtool build $(pwd)$line
+	drawBar
+	echo -e "Compiled: $line\n"
+	drawBar
+done < ProjectList.txt
+echo "All projects have been compiled."
+drawBar

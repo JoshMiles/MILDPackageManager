@@ -11,8 +11,8 @@ namespace downloader
 {
 	class MainClass
 	{
-		public string ServerIP = "127.0.0.1";
-		public int ServerPort = 8000;
+		public static string ServerIP = "127.0.0.1";
+		public static int ServerPort = 8000;
 		public static void Main (string[] args)
 		{
 			if(args.Length == 0){

@@ -29,7 +29,7 @@ namespace FileDB
                 t.Start();
             }
 		}
-		       public static void Service()
+		public static void Service()
         {
             string COL_DOM = "";
             while (true)
@@ -61,4 +61,5 @@ namespace FileDB
                 }
             }
 	}
+}
 }
