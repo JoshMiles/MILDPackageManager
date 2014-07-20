@@ -1,17 +1,32 @@
 #!/bin/bash
+echo "=========================================="
+echo "=== GIT PUSH AUTOMATED SCRIPT FOR MILD ==="
+echo "=========================================="
+echo "This script will automatically pull any"
+echo "changes from the repo before pushing your"
+echo "changes."
+echo "=========================================="
 echo "Pulling any changes from repo."
 git pull
+echo "=========================================="
 echo "Press any key to continue."
 read randomshit
+echo "=========================================="
 echo "Preparing to push changes."
 git add -u
 git add *
+echo "=========================================="
 echo -e "Enter a commit message:"
 read commitmessage
+echo "=========================================="
 git commit -m "$commitmessage"
-echo "Press any key to commit with the message:"
+echo -e "Comitting  with the message:"
 echo $commitmessage
-read randomshit
+echo "=========================================="
 echo "Pushing to origin master."
 git push origin master
-echo "Done."
+echo "=========================================="
+echo "Your changes have been pushed to the"
+echo "origin master branch. Any errors should"
+echo "be shown above."
+echo "=========================================="
