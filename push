@@ -16,14 +16,14 @@ sleep 1
 }
 drawBar()
 {
-echo "==========================================="
+echo "=========================================="
 }
 clear
 drawTitle
 echo "This script will automatically pull any"
 echo "changes from the repo before pushing your"
 echo "changes."
-echo "==========================================="
+echo "=========================================="
 waitSec
 clear
 drawTitle
@@ -36,6 +36,7 @@ drawTitle
 git add -u
 git add *
 echo -e "Enter a commit message:"
+drawBar
 read commitmessage
 clear
 drawTitle
@@ -43,19 +44,19 @@ git commit -m "$commitmessage"
 drawBar
 echo -e "Comitting  with the message:"
 echo $commitmessage
-echo "==========================================="
+drawBar
 waitSec
 clear
 drawTitle
 echo "Pushing to origin master."
-echo "==========================================="
+drawBar
 echo "You will need your Github credentials to"
 echo "continue."
-echo "==========================================="
+drawBar
 git push origin master
-echo "==========================================="
+drawBar
 echo "Your changes have been pushed to the"
 echo "origin master branch. Any errors should"
 echo "be shown above."
-echo "==========================================="
+drawBar
 
