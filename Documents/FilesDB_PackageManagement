@@ -41,3 +41,36 @@ used in conjunction with the package's key in order to make changes).
 Unfortunately, we are unable to open the FilesDB server to everyone as
 that would have severe security risks. 
 Application for a developers key is currently not open.
+
+=== FilesDB RC ===
+
+Here is how the application pushes packages and make modifications with
+the server.
+It uses RCs, just as when retrieving package information, to make changes
+to the FilesDB.
+
+Here is the RC table.
+
+=Request Code===Request Structure=
+= PUSH        = PUSH:[developerkey1]:[developerkey2]:[packagename]:[packageauthor]:[authorwebsite]:[packagedownloadlink]
+= PMOD        = PMOD:[developerkey1]:[developerkey2]:[packagekey]:[packagename]:[modifycode]:[modification]
+= PDEL        = PDEL:[developerkey1]:[developerkey2]:[packagekey]:[reason]
+==================================
+
+The PMOD request code requires you to send a modify code.
+Use the table below to find your desired modification code.
+
+=Modify Code===Description=
+= 0          = Package download link
+= 1          = Package name
+= 2          = Package author
+= 3          = Package author website
+===========================
+
+The RCs are translated in the table below to their binary and hex values.
+
+=Request Code===Binary===Hex=
+= PUSH        = 0001   = 1  =
+= PMOD        = 0010   = 2  =
+= PDEL        = 0011   = 3  =
+=============================
