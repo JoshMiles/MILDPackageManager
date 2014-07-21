@@ -1,0 +1,38 @@
+=== Pushing Packages === 
+
+Here is a tutorial on how to push a package to the FilesDB.
+
+You will need;
+
+- A developer key
+
+- A name for the package
+
+- A link to it's source code's archive available for download via HTTP
+
+- Your own name
+
+- A website (can just be a issues page on github or a wiki)
+
+- A dependancies list
+
+To begin with, you first need to change directory into the dir named
+"PackageManagement". Once you are in there; you need to run the script entitled
+"push" by using the command "./push" (assuming it is executable).
+
+The push script will launch a C# program (is uses mono).
+It will provide a step by step wizard on submitting a package.
+
+=== The Developers Key ===
+The developers key is actually two unique strings with 16 characters in each.
+It is used to push packages to the FilesDB. When it is used to push
+a package, the developers key is assigned to the package and therefore
+you can only use the DK (developers key) to delete the package from the
+server or to edit a package's details (the Developers Key has to be
+used in conjunction with the package's key in order to make changes).
+ 
+=== How to get a developers key ===
+
+Unfortunately, we are unable to open the FilesDB server to everyone as
+that would have severe security risks. 
+Application for a developers key is currently not open.

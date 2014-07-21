@@ -9,6 +9,8 @@ readme file and using the port specified in said readme.
 Once you have established a TCP stream, you can begin to request data.
 Use the following table to request date from the server.
 
+THERE IS A SEPERATE DOCUMENT FOR PUSHING PACKAGES TO THE FILES DB.
+
 The Request Structure (RS) shows simply in which order to send the request code
 and any following information.
 For example; MDSM:[package name]
