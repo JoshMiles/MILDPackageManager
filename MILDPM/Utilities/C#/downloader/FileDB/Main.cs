@@ -60,6 +60,13 @@ namespace FileDB
 						break;
 					case "SRCH" || "0111" || "7": // Perform a search for a package
 						break;
+					// These are now the RCs for the PackageManagment utility
+					case "PUSH" || "1000" || "8": // Request a package push
+						break;
+					case "PMOD" || "1001" || "9": // Request a package modification
+						break;
+					case "PDEL" || "1010" || "A": // Request a package deletion
+						break;
 					default:
 						// error
 						sw.WriteLine ("NULL");

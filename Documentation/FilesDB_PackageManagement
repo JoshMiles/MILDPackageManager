@@ -70,7 +70,7 @@ Use the table below to find your desired modification code.
 The RCs are translated in the table below to their binary and hex values.
 
 =Request Code===Binary===Hex=
-= PUSH        = 0001   = 1  =
-= PMOD        = 0010   = 2  =
-= PDEL        = 0011   = 3  =
+= PUSH        = 1000   = 8  =
+= PMOD        = 1001   = 9  =
+= PDEL        = 1010   = A  =
 =============================

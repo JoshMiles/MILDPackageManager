@@ -2,7 +2,7 @@
 drawTitle()
 {
 echo "=========================================="
-echo "=== GIT PUSH AUTOMATED SCRIPT FOR MILD ==="
+echo "=== GIT PUSH AUTOMATED SCRIPT FOR JOSH ==="
 echo "=========================================="
 }
 waitSec()
@@ -23,6 +23,7 @@ drawTitle
 echo "This script will automatically pull any"
 echo "changes from the repo before pushing your"
 echo "changes."
+echo "It was made by Josh to make life easier."
 echo "=========================================="
 waitSec
 clear
