@@ -23,6 +23,11 @@ To begin with, you first need to change directory into the dir named
 The push script will launch a C# program (is uses mono).
 It will provide a step by step wizard on submitting a package.
 
+At the end of the process, the wizard will give you a unique package
+key which you MUST take note of otherwise you will not be able to
+make changes/delete your package from the FilesDB without going through
+some hefty authentication process.
+
 === The Developers Key ===
 The developers key is actually two unique strings with 16 characters in each.
 It is used to push packages to the FilesDB. When it is used to push
